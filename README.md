@@ -3,6 +3,6 @@
 ## Tema 0 - Actividad de introducción
 |Nº ejercicio|Descripción     |
 |------------|----------------|
-|[Ejercicio 1](Tema0/Tema0)|Simple Web Server|
-|[Ejercicio 2]()|HTTP Server      |
-|[Ejercicio 3]()|Dummy Web Server |
+|[Ejercicio 1](Tema0/Ejemplo1.md)|Simple Web Server|
+|[Ejercicio 2](Tema0/Ejemplo2.md)|HTTP Server      |
+|[Ejercicio 3](Tema0/Ejemplo3.md)|Dummy Web Server |
