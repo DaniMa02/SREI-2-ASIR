@@ -27,6 +27,12 @@ Una vez tiene permisos vamos a habilitar los VirtualHosts con a2ensite y el nomb
 
 ![image](https://github.com/DaniMa02/SREI-2-ASIR/assets/47284389/954835ce-365a-4d50-b420-d3b1420c62cc)
 
+Y comprobamos que ambas direcciones funcionen si intentamos acceder a ellas.
+![image](https://github.com/DaniMa02/SREI-2-ASIR/assets/47284389/d37c1bcc-48a5-431b-986c-1285babcc1bb)
+![image](https://github.com/DaniMa02/SREI-2-ASIR/assets/47284389/4fb8b884-08d0-441a-a74a-473df91b352f)
+
+
+
 
 
 
