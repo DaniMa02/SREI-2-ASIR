@@ -10,7 +10,15 @@ Una vez descargadas las actualizaciones, descargaremos apache con el comando apt
 En mi caso ya lo tengo instalado y aparece que ya tengo la última versión.  
 Para configurar los dos dominios accederemos al archivo hosts y lo editamos, cambiando las ip de localhost para que correspondan con los dominios mencionados, quedando de la siguiente manera:  
 ![image](https://github.com/DaniMa02/SREI-2-ASIR/assets/47284389/b7cdb0b6-86ec-427c-b466-55d4bb79f0e7)
-En mi caso usare el 127.0.0.1 para centro.intranet y 127.0.1.1 para departamentos.centro.intranet.
+En mi caso usare el 127.0.0.1 para centro.intranet y 127.0.1.1 para departamentos.centro.intranet.  
+Una vez configuradas las ips para los dos sitios crearemos sus respectivas carpetas y páginas principales. Para ello accedemos a /var/www y creamos las dos carpetas y dentro sus respectivos index.
+![image](https://github.com/DaniMa02/SREI-2-ASIR/assets/47284389/fa7180e3-3755-45c5-b2b7-1983f1031103)
+![image](https://github.com/DaniMa02/SREI-2-ASIR/assets/47284389/6ad10bfe-c463-4349-bccd-4ca7126cd5c0)
+![image](https://github.com/DaniMa02/SREI-2-ASIR/assets/47284389/39e24f1a-1d7b-4d3a-830b-7b4dc91f7d24)
+Después de crear sus respectivos sitios, tendremos que crear los archivos de configuración de dichos sitios.
+
+
+
 
 
 ### Activar los módulos necesarios para ejecutar php y acceder a mysql.
