@@ -16,7 +16,7 @@ Una vez configuradas las ips para los dos sitios crearemos sus respectivas carpe
 ![image](https://github.com/DaniMa02/SREI-2-ASIR/assets/47284389/6ad10bfe-c463-4349-bccd-4ca7126cd5c0)
 ![image](https://github.com/DaniMa02/SREI-2-ASIR/assets/47284389/39e24f1a-1d7b-4d3a-830b-7b4dc91f7d24)
 Después de crear sus respectivos sitios, tendremos que crear los archivos de configuración de dichos sitios.
-
+![image](https://github.com/DaniMa02/SREI-2-ASIR/assets/47284389/2687b153-aa94-4ded-b459-df77282dfadc)
 ![image](https://github.com/DaniMa02/SREI-2-ASIR/assets/47284389/6d1d7179-c681-45d1-ade4-54e627281a5f)
 
 
