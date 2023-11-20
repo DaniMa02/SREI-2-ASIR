@@ -7,8 +7,8 @@ Primero que nada, para instalar apache en nuestro sistema, buscaremos actualizac
 
 Una vez descargadas las actualizaciones, descargaremos apache con el comando apt install apache2
 ![image](https://github.com/DaniMa02/SREI-2-ASIR/assets/47284389/59dae303-853a-41b4-9a40-4b391df662a7)
-En mi caso ya lo tengo instalado y aparece que ya tengo la última versión.
-Para configurar los dos dominios accederemos al archivo hosts y lo editamos, cambiando las ip de localhost para que correspondan con los dominios mencionados, quedando de la siguiente manera:
+En mi caso ya lo tengo instalado y aparece que ya tengo la última versión.  
+Para configurar los dos dominios accederemos al archivo hosts y lo editamos, cambiando las ip de localhost para que correspondan con los dominios mencionados, quedando de la siguiente manera:  
 ![image](https://github.com/DaniMa02/SREI-2-ASIR/assets/47284389/b7cdb0b6-86ec-427c-b466-55d4bb79f0e7)
 En mi caso usare el 127.0.0.1 para centro.intranet y 127.0.1.1 para departamentos.centro.intranet.
 
