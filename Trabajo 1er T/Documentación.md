@@ -19,6 +19,13 @@ Después de crear sus respectivos sitios, tendremos que crear los archivos de co
 ![image](https://github.com/DaniMa02/SREI-2-ASIR/assets/47284389/2687b153-aa94-4ded-b459-df77282dfadc)
 ![image](https://github.com/DaniMa02/SREI-2-ASIR/assets/47284389/6d1d7179-c681-45d1-ade4-54e627281a5f)
 
+Ahora damos permisos a las carpetas para que apache pueda acceder a ellas y pueda abrir el archivo index.
+
+![image](https://github.com/DaniMa02/SREI-2-ASIR/assets/47284389/8945e739-90ac-4a89-9c77-2569bd860227)
+
+Una vez tiene permisos vamos a habilitar los VirtualHosts con a2ensite y el nombre del dominio y reiniciando apache para que los cambios se apliquen.
+
+![image](https://github.com/DaniMa02/SREI-2-ASIR/assets/47284389/954835ce-365a-4d50-b420-d3b1420c62cc)
 
 
 
