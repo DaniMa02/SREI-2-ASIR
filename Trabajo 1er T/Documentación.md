@@ -8,10 +8,8 @@ Primero que nada, para instalar apache en nuestro sistema, buscaremos actualizac
 Una vez descargadas las actualizaciones, descargaremos apache con el comando apt install apache2
 ![image](https://github.com/DaniMa02/SREI-2-ASIR/assets/47284389/59dae303-853a-41b4-9a40-4b391df662a7)
 En mi caso ya lo tengo instalado y aparece que ya tengo la última versión.  
-Para configurar los dos dominios accederemos al archivo hosts y lo editamos, cambiando las ip de localhost para que correspondan con los dominios mencionados, quedando de la siguiente manera:  
-![image](https://github.com/DaniMa02/SREI-2-ASIR/assets/47284389/b7cdb0b6-86ec-427c-b466-55d4bb79f0e7)
-En mi caso usare el 127.0.0.1 para centro.intranet y 127.0.1.1 para departamentos.centro.intranet.
-Una vez configuradas las ips para los dos sitios crearemos sus respectivas carpetas y páginas principales. Para ello accedemos a /var/www y creamos las dos carpetas y dentro sus respectivos index.
+
+Primero crearemos sus respectivas carpetas y páginas principales. Para ello accedemos a /var/www y creamos las dos carpetas y dentro sus respectivos index.
 ![image](https://github.com/DaniMa02/SREI-2-ASIR/assets/47284389/fa7180e3-3755-45c5-b2b7-1983f1031103)
 ![image](https://github.com/DaniMa02/SREI-2-ASIR/assets/47284389/6ad10bfe-c463-4349-bccd-4ca7126cd5c0)
 ![image](https://github.com/DaniMa02/SREI-2-ASIR/assets/47284389/39e24f1a-1d7b-4d3a-830b-7b4dc91f7d24)
@@ -27,14 +25,13 @@ Una vez tiene permisos vamos a habilitar los VirtualHosts con a2ensite y el nomb
 
 ![image](https://github.com/DaniMa02/SREI-2-ASIR/assets/47284389/954835ce-365a-4d50-b420-d3b1420c62cc)
 
-Y comprobamos que ambas direcciones funcionen si intentamos acceder a ellas.
+Por último vamos a configurar las IPs de los dominios en el archivo de hosts
+![image](https://github.com/DaniMa02/SREI-2-ASIR/assets/47284389/b7cdb0b6-86ec-427c-b466-55d4bb79f0e7)
+
+En mi caso usare el 127.0.0.1 para centro.intranet y 127.0.1.1 para departamentos.centro.intranet.
+Una vez hecho todo, comprobamos que ambas direcciones funcionen si intentamos acceder a ellas.
 ![image](https://github.com/DaniMa02/SREI-2-ASIR/assets/47284389/d37c1bcc-48a5-431b-986c-1285babcc1bb)
 ![image](https://github.com/DaniMa02/SREI-2-ASIR/assets/47284389/4fb8b884-08d0-441a-a74a-473df91b352f)
-
-
-
-
-
 
 
 ### Activar los módulos necesarios para ejecutar php y acceder a mysql.
