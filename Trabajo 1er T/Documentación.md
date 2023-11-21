@@ -35,7 +35,107 @@ Una vez hecho todo, comprobamos que ambas direcciones funcionen si intentamos ac
 
 
 ### Activar los módulos necesarios para ejecutar php y acceder a mysql.
+
+Para instalar MySQL usamos el siguientes comando:
+sudo apt install mysql-server
+![image](https://github.com/DaniMa02/SREI-2-ASIR/assets/47284389/1bc03a28-2a84-48a5-91b7-fa876776fc9b)
+
+
+Para comprobar que funciona probamos a iniciar sesión con el comando sudo mysql
+![image](https://github.com/DaniMa02/SREI-2-ASIR/assets/47284389/b59ce719-a7d5-4aa1-8790-b1747f45bd54)
+
+Ahora, para instalar PHP usamos el siguiente comando para instalar las librerias necesarias:
+sudo apt install php libapache2-mod-php php-mysql, en caso de que no encuentre la librería, realizaremos primero un apt update y un apt upgrade.
+
+![image](https://github.com/DaniMa02/SREI-2-ASIR/assets/47284389/fb0523dc-5197-4a08-8950-742f8ef59c3f)
+
+Una vez instalado, para comprobar que así ha sucedido y la versión que se ha instalado usamos el comando php -v.
+![image](https://github.com/DaniMa02/SREI-2-ASIR/assets/47284389/e1598a1f-4101-4d58-9cd9-05a4aeb94890)
+
+
 ### Instala y configura wordpress.
+
+Para instalar y configurar wordpress lo primero que necesitaremos es crear una base de datos, para ello entraremos a mysql como usuario root con el siguiente comando:
+
+![image](https://github.com/DaniMa02/SREI-2-ASIR/assets/47284389/7ded5977-cc79-4098-bef9-3fd907f6a3be)
+
+Una vez hayamos iniciado sesión, crearemos una base de datos con el siguiente comando:
+CREATE DATABASE centrointranet DEFAULT CHARACTER SET utf8 COLLATE utf8_unicode_ci;
+![image](https://github.com/DaniMa02/SREI-2-ASIR/assets/47284389/b87e2ad6-ba8a-48db-bd6b-a70e982d8f9c)
+
+Lo siguiente será crear el usuario con el que realizaremos operaciones en nuestra base de datos e iniciaremos sesión con él en la base de datos.
+![image](https://github.com/DaniMa02/SREI-2-ASIR/assets/47284389/21e03c96-ca71-4e71-b430-6bb931b2d75a)
+
+Y le otorgamos acceso completo a la base de datos.
+
+![image](https://github.com/DaniMa02/SREI-2-ASIR/assets/47284389/bab0e1d6-6178-40e5-a1b9-8c8b6a1237d4)
+
+Ahora recargamos mysql para que los cambios surtan efecto y la cerramos.
+
+![image](https://github.com/DaniMa02/SREI-2-ASIR/assets/47284389/1fc7629f-aca0-4838-bdf2-73e78c05c492)
+
+Ahora vamos a instalar extensiones adicionales de PHP.
+![image](https://github.com/DaniMa02/SREI-2-ASIR/assets/47284389/3255228d-709d-4323-a568-7bef38e2093c)
+
+Y reiniciamos apache con service apache2 restart.
+
+Una vez instalados dichos modulos vamos a cambiar la configuración de apache para permitir reemplazos y reescrituras .htacces. Para ello, abriremos el archivo de configuración de apache y configuramos la directiva AllowOverride para permitir que apache lea los ficheros de tipo .htaccess.
+
+![image](https://github.com/DaniMa02/SREI-2-ASIR/assets/47284389/de62899f-ff7d-44b5-b020-d01d763d014e)
+
+Ahora habilitamos el módulo de reescritura:
+
+![image](https://github.com/DaniMa02/SREI-2-ASIR/assets/47284389/f62ef764-9ea2-4332-bbfc-137e7fb76436)
+
+Y habilitamos los cambios:
+![image](https://github.com/DaniMa02/SREI-2-ASIR/assets/47284389/dcc91447-ea15-40f3-a789-da387168421c)
+
+Reiniciamos apache después de eso y lo siguiente que haremos será descargar WordPress.
+
+Para descargar wordpress vamos a dirigirnos a un directorio que permita escritura, en mi caso usaré /tmp y ahí descargaré wordpress como un archivo comprimido, lo extraeré y crearé un archivo .htaccess ficticio.  
+![image](https://github.com/DaniMa02/SREI-2-ASIR/assets/47284389/e40d4093-3740-4a0a-b0e8-b6185d12069a)
+
+![image](https://github.com/DaniMa02/SREI-2-ASIR/assets/47284389/aab2c6c9-f5a0-4acf-b5f9-baf1b8a3c2c4)
+
+Ahora voy a copiar el archivo de configuración de muestra que se crea al instalar Wordpress a un fichero con el nombre que lee Wordpress por defecto.
+![image](https://github.com/DaniMa02/SREI-2-ASIR/assets/47284389/454e78ee-466b-4814-9400-bc0e812d1151)
+
+Lo siguiente que voy a hacer es crear de actualización para que wordpress no tenga problemas de permisos al actualizarse por su cuenta. También moveré el contenido del directorio a nuestro directorio root de documentos.
+
+![image](https://github.com/DaniMa02/SREI-2-ASIR/assets/47284389/df828f61-d88b-4735-8626-7ddcab53c1ae)
+
+Ahora voy a configurar dichos archivos para que sean propiedad del usuario y del grupo www-data y voy a cambiar los permisos de los directorios y archivos de WordPress para que pueda trabajar con ellos sin ningún problema.
+
+![image](https://github.com/DaniMa02/SREI-2-ASIR/assets/47284389/394fed29-29a1-4dfa-a3d5-77685ee5862d)
+
+Una vez configurados, el siguiente paso será configurar el archivo de configuración de WordPress. Lo primero que tendremos que hacer será ajustar algunas claves secretras para proporcionar seguridad a nuestra instalación. Para ello, usaremos un generador seguro que proporciona WordPress y los sustituiremos en el archivo de configuración de Wordpress en la sección que corresponde.
+
+![image](https://github.com/DaniMa02/SREI-2-ASIR/assets/47284389/a1ead698-c847-4c3a-9520-eaa7a4430615)
+
+![image](https://github.com/DaniMa02/SREI-2-ASIR/assets/47284389/636d07ef-24fe-4fb6-b3da-b17febef3c3c)
+
+Ahora configuraremos los ajustes de conexión de la base de datos dentro del mismo archivo y el método que debe usar WordPress para escribir el sistema de archivos para que no solicite credenciales de FTP cuando realicemos algunas acciones.
+
+![image](https://github.com/DaniMa02/SREI-2-ASIR/assets/47284389/49a75427-8566-42ad-88b4-5ad4f1d0c3e9)
+
+![image](https://github.com/DaniMa02/SREI-2-ASIR/assets/47284389/5a2dd347-216a-4c30-bb73-73b23580492b)
+
+Una vez configurado guardamos el archivo y lo cerramos.
+
+Ahora podremos acceder a nuestra página en WordPress desde la interfaz de usuario como de costumbre con las credenciales especificadas para modificar nuestra página a nuestro gusto.
+
+Lo primero que nos pide WordPress al entrar por primera vez es el idioma, seleccionamos el que queramos.
+
+![image](https://github.com/DaniMa02/SREI-2-ASIR/assets/47284389/bfd927be-5664-497e-a44d-df4efd1c3995)
+
+Lo siguiente será el nombre del sitio y las credenciales que queremos usar para iniciar sesión en el sitio.
+![image](https://github.com/DaniMa02/SREI-2-ASIR/assets/47284389/2071f51c-805d-4b17-88c4-0ef646146dc9)
+
+![image](https://github.com/DaniMa02/SREI-2-ASIR/assets/47284389/77797078-357a-4d80-833b-703684011e4a)
+
+Una vez todo está configurado, podemos comprobar que la página de WordPress se ha generado automáticamente buscando en internet el nombre de nuestro dominio.
+![image](https://github.com/DaniMa02/SREI-2-ASIR/assets/47284389/e4bf7751-9e6b-4856-9163-83805346bfae)
+
 ### Activar el módulo “wsgi” para permitir la ejecución de aplicaciones Python.
 ### Crea y despliega una pequeña aplicación python para comprobar que funciona correctamente.
 ### Adicionalmente protegeremos el acceso a la aplicación python mediante autenticación.
