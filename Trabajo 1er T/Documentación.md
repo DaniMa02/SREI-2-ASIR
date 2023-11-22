@@ -136,8 +136,29 @@ Lo siguiente será el nombre del sitio y las credenciales que queremos usar para
 Una vez todo está configurado, podemos comprobar que la página de WordPress se ha generado automáticamente buscando en internet el nombre de nuestro dominio.
 ![image](https://github.com/DaniMa02/SREI-2-ASIR/assets/47284389/e4bf7751-9e6b-4856-9163-83805346bfae)
 
+Ahora podremos crear y editar nuestra web como queramos.
+
 ### Activar el módulo “wsgi” para permitir la ejecución de aplicaciones Python.
+
+Para activar dicho módulo lo instalaremos con el comando apt-get install libapache2-mod-wsgi-py3.
+![image](https://github.com/DaniMa02/SREI-2-ASIR/assets/47284389/612cd4db-20d3-4828-947a-cc80f6491aef)
+
+Reiniciamos apache y ya funcionaría.
+
 ### Crea y despliega una pequeña aplicación python para comprobar que funciona correctamente.
+Antes de poder crear y desplegar aplicaciones python, debemos crear y configurar los directorios y archivos necesarios.
+
+Para ello, lo primero que vamos a hacer es crear la estructura de directorios para nuestra aplicación dentro de nuestro dominio.
+
+En mi caso, voy a crear una carpeta en la que se almacenará nuestra aplicación Python que no será accesible por los usuarios y otra que será la que sirva la aplicación y por lo tanto será pública.
+![image](https://github.com/DaniMa02/SREI-2-ASIR/assets/47284389/5ff635fb-b519-459b-ba41-b93160bf8cc9)
+
+La estructura de nuestro directorio del dominio quedaría de la siguiente manera
+
+![image](https://github.com/DaniMa02/SREI-2-ASIR/assets/47284389/d3342b34-d200-4190-ac18-81ed7200bd29)
+
+Ahora vamos a crear el controlador para la aplicación dentro de la carpeta.
+
 ### Adicionalmente protegeremos el acceso a la aplicación python mediante autenticación.
 ### Instala y configura awstat.
 ### Instala un segundo servidor de tu elección (nginx, lighttpd) bajo el dominio “servidor2.centro.intranet”. Debes configurarlo para que sirva en el puerto 8080 y haz los cambios necesarios para ejecutar php. Instala phpmyadmin.
