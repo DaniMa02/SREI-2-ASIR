@@ -159,6 +159,14 @@ La estructura de nuestro directorio del dominio quedaría de la siguiente manera
 
 Ahora vamos a crear el controlador para la aplicación dentro de la carpeta.
 
+![image](https://github.com/DaniMa02/SREI-2-ASIR/assets/47284389/92cda629-b10e-455c-a596-01e9792b9e25)
+
+Una vez creado, vamos a editar el archivo para hacer que maneje las peticiones del usuario llamando a los módulos que solicite el mismo.
+![image](https://github.com/DaniMa02/SREI-2-ASIR/assets/47284389/c46a70b0-02e2-41f9-a6b5-66f772df7558)
+
+Ahora vamos a configurar el VirtualHost de la siguiente manera:
+
+
 ### Adicionalmente protegeremos el acceso a la aplicación python mediante autenticación.
 ### Instala y configura awstat.
 ### Instala un segundo servidor de tu elección (nginx, lighttpd) bajo el dominio “servidor2.centro.intranet”. Debes configurarlo para que sirva en el puerto 8080 y haz los cambios necesarios para ejecutar php. Instala phpmyadmin.
