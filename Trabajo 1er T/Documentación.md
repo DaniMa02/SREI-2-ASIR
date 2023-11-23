@@ -166,7 +166,15 @@ Una vez creado, vamos a editar el archivo para hacer que maneje las peticiones d
 
 Ahora vamos a configurar el VirtualHost de la siguiente manera:
 
+![image](https://github.com/DaniMa02/SREI-2-ASIR/assets/47284389/74154047-24d8-4a72-8118-d621b1c582f5)
+
+Una vez configurado el módulo WSGIG y la directiva, accedemos a nuestro dominio desde internet y podremos ver que nuestra aplicación python funciona correctamente.
+
+![image](https://github.com/DaniMa02/SREI-2-ASIR/assets/47284389/8bfda80b-e426-4ecb-904f-75c0a5479e44)
+
 
 ### Adicionalmente protegeremos el acceso a la aplicación python mediante autenticación.
+
+Para proteger el acceso a nuestra aplicación python
 ### Instala y configura awstat.
 ### Instala un segundo servidor de tu elección (nginx, lighttpd) bajo el dominio “servidor2.centro.intranet”. Debes configurarlo para que sirva en el puerto 8080 y haz los cambios necesarios para ejecutar php. Instala phpmyadmin.
