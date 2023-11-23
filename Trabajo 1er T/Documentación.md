@@ -205,5 +205,26 @@ Una vez instalado vamos a configurarlo. Para ello vamos a copiar el archivo awst
 
 ![image](https://github.com/DaniMa02/SREI-2-ASIR/assets/47284389/f8b0311e-fe1f-4e9b-872f-154fd305bc53)
 
+![image](https://github.com/DaniMa02/SREI-2-ASIR/assets/47284389/edf52d56-2749-4403-af86-346a10eec6d3)
 
+Tendremos que configurar al menos esos tres parametros.
+
+Una vez configurados, tendremos que configurar apache para que permita el acceso a las estadisticas de awstats. Para ello, accedemos al archivo .conf del VirtualHost. Quedará de la siguiente manera:
+
+![image](https://github.com/DaniMa02/SREI-2-ASIR/assets/47284389/fe1abd29-c6ed-4f40-a7e2-6ff8fe081d5f)
+
+Lo siguiente será configurar Awstats para que procese registros y genere estadisticas.
+
+Para ello haremos lo siguiente:
+![image](https://github.com/DaniMa02/SREI-2-ASIR/assets/47284389/bd1825fa-7232-42c5-b2d9-8005b5d57a51)
+
+Con ese comando crearemos un enlace simbólico al fichero para que podamos acceder desde ahí también.
+
+De esta manera Awstats quedará configurado, solo tendremos que reinicar apache para que funcione.
+
+NOTA: apache no reiniciaba porque había un fallo de sintaxis en el VirtualHost, la línea options debía estar dentro de <Directory> y todas sus opciones debían empezar por - o +. De la siguiente manera.
+
+![image](https://github.com/DaniMa02/SREI-2-ASIR/assets/47284389/596d7f95-ccd7-4ae9-b876-77af99b54c7c)
+
+Ahora funciona todo correctamente.
 ### Instala un segundo servidor de tu elección (nginx, lighttpd) bajo el dominio “servidor2.centro.intranet”. Debes configurarlo para que sirva en el puerto 8080 y haz los cambios necesarios para ejecutar php. Instala phpmyadmin.
