@@ -175,6 +175,13 @@ Una vez configurado el módulo WSGIG y la directiva, accedemos a nuestro dominio
 
 ### Adicionalmente protegeremos el acceso a la aplicación python mediante autenticación.
 
-Para proteger el acceso a nuestra aplicación python
+Para proteger el acceso a nuestra aplicación python vamos a instalar el paquete de apache2-utils y a crear un archivo de contraseñas. Lo primero que vamos a hacer es instalar la utilidad con sudo apt-get install apache2-utils.
+
+![image](https://github.com/DaniMa02/SREI-2-ASIR/assets/47284389/8c984596-15fc-44ab-a506-81dc3c1616d5)
+
+Ahora creamos el archivo de contraseñas.
+
+
+
 ### Instala y configura awstat.
 ### Instala un segundo servidor de tu elección (nginx, lighttpd) bajo el dominio “servidor2.centro.intranet”. Debes configurarlo para que sirva en el puerto 8080 y haz los cambios necesarios para ejecutar php. Instala phpmyadmin.
