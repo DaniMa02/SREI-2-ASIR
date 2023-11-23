@@ -180,8 +180,30 @@ Para proteger el acceso a nuestra aplicación python vamos a instalar el paquete
 ![image](https://github.com/DaniMa02/SREI-2-ASIR/assets/47284389/8c984596-15fc-44ab-a506-81dc3c1616d5)
 
 Ahora creamos el archivo de contraseñas.
+![image](https://github.com/DaniMa02/SREI-2-ASIR/assets/47284389/f8e541ec-5232-4d4d-ac6e-7252f560f487)
 
+Nos pedirá la ruta con el nombre del fichero, un usuario y una contraseña. Una vez creado, configuraremos el VirtualHost de la siguiente manera:
+
+![image](https://github.com/DaniMa02/SREI-2-ASIR/assets/47284389/b9103cbb-e34d-4aba-9ee2-919ba80c568a)
+
+Y ahora reiniciamos apache y si accedemos a nuestra página nos pedira autenticación para ver el contenido.
+
+![image](https://github.com/DaniMa02/SREI-2-ASIR/assets/47284389/c6f0e137-fbb4-4544-9036-f0f33a8d9678)
+
+Una vez ponemos un usuario y contraseña validos nos permite ver el contenido.
+
+![image](https://github.com/DaniMa02/SREI-2-ASIR/assets/47284389/9fbb807d-d841-43c4-8a55-0ea0e03c9fa4)
 
 
 ### Instala y configura awstat.
+
+Awstats es una herramienta usada para analizar registros de servidores web y generar informes estadísticos. Para instalarla, usamos el comando apt-get install awstats.
+
+![image](https://github.com/DaniMa02/SREI-2-ASIR/assets/47284389/a8dfb530-49a2-4c60-b270-30954e36ed15)
+
+Una vez instalado vamos a configurarlo. Para ello vamos a copiar el archivo awstats.conf a el archivo awstats.conf.local para configurarlo por separado puesto que el .conf contiene la configuración global de Awstats y el .local se puede configurar para un sitio específico sin afectar la configuración global, de esta manera podemos tener cada uno de nuestros sitios con su propia configuración independiente.
+
+![image](https://github.com/DaniMa02/SREI-2-ASIR/assets/47284389/f8b0311e-fe1f-4e9b-872f-154fd305bc53)
+
+
 ### Instala un segundo servidor de tu elección (nginx, lighttpd) bajo el dominio “servidor2.centro.intranet”. Debes configurarlo para que sirva en el puerto 8080 y haz los cambios necesarios para ejecutar php. Instala phpmyadmin.
