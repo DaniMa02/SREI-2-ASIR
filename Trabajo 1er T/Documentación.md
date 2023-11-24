@@ -201,33 +201,34 @@ Awstats es una herramienta usada para analizar registros de servidores web y gen
 
 ![image](https://github.com/DaniMa02/SREI-2-ASIR/assets/47284389/a8dfb530-49a2-4c60-b270-30954e36ed15)
 
-Una vez instalado vamos a configurarlo. Para ello vamos a copiar el archivo awstats.conf a el archivo awstats.conf.local para configurarlo por separado puesto que el .conf contiene la configuración global de Awstats y el .local se puede configurar para un sitio específico sin afectar la configuración global, de esta manera podemos tener cada uno de nuestros sitios con su propia configuración independiente.
+Ahora crearemos un archivo de configuracion en apache para awstats con el siguiente comando:
+nano /etc/apache2/conf-available/awstats.conf 
+Una vez creado lo configuramos de la siguiente manera:
+![image](https://github.com/DaniMa02/SREI-2-ASIR/assets/47284389/18847be5-5738-442d-baa1-f231cea514d9)
 
-![image](https://github.com/DaniMa02/SREI-2-ASIR/assets/47284389/f8b0311e-fe1f-4e9b-872f-154fd305bc53)
+Una vez configurado vamos a activar el módulo cgi y activamos la nueva configuración con los siguientes comandos:
 
-![image](https://github.com/DaniMa02/SREI-2-ASIR/assets/47284389/edf52d56-2749-4403-af86-346a10eec6d3)
+![image](https://github.com/DaniMa02/SREI-2-ASIR/assets/47284389/21927bd1-a392-4d48-b2fa-6c1b4840e630)
 
-Tendremos que configurar al menos esos tres parametros.
+Ahora reiniciamos apache.
 
-Una vez configurados, tendremos que configurar apache para que permita el acceso a las estadisticas de awstats. Para ello, accedemos al archivo .conf del VirtualHost. Quedará de la siguiente manera:
+Una vez se reinicie vamos a crear nuestro archivo de configuración para nuestro dominio copiando el archivo por defecto a otro con el nombre de nuestro dominio.
 
-![image](https://github.com/DaniMa02/SREI-2-ASIR/assets/47284389/b7352152-6f74-4b9f-8dba-d230392a2374)
+![image](https://github.com/DaniMa02/SREI-2-ASIR/assets/47284389/1e16ca24-8e0a-44f8-9632-69d8d1650f05)
 
+Y lo configuramos:
+![image](https://github.com/DaniMa02/SREI-2-ASIR/assets/47284389/45a48669-2d84-414e-b9d1-34377927c64e)
 
-Lo siguiente será configurar Awstats para que procese registros y genere estadisticas.
+Ahora usamos el siguiente comando para que se actualicen nuestras estadisticas:
+ /usr/lib/cgi-bin/awstats.pl -config=example.com -update 
 
-Para ello haremos lo siguiente:
-![image](https://github.com/DaniMa02/SREI-2-ASIR/assets/47284389/bd1825fa-7232-42c5-b2d9-8005b5d57a51)
+ ![image](https://github.com/DaniMa02/SREI-2-ASIR/assets/47284389/03647700-0f9c-4e7b-be72-1986fba79001)
 
-Con ese comando crearemos un enlace simbólico al fichero para que podamos acceder desde ahí también.
+Por último accedemos a la página de las estadísticas:
 
-De esta manera Awstats quedará configurado, solo tendremos que reinicar apache para que funcione.
+![image](https://github.com/DaniMa02/SREI-2-ASIR/assets/47284389/0a94dc2d-ae2d-4471-a380-00f5a0acfaed)
 
-NOTA: apache no reiniciaba porque había un fallo de sintaxis en el VirtualHost, la línea options debía estar dentro de <Directory> y todas sus opciones debían empezar por - o +. De la siguiente manera.
-
-![image](https://github.com/DaniMa02/SREI-2-ASIR/assets/47284389/596d7f95-ccd7-4ae9-b876-77af99b54c7c)
-
-Ahora funciona todo correctamente.
+Como comprobamos aparecen las estadísticas.
 ### Instala un segundo servidor de tu elección (nginx, lighttpd) bajo el dominio “servidor2.centro.intranet”. Debes configurarlo para que sirva en el puerto 8080 y haz los cambios necesarios para ejecutar php. Instala phpmyadmin.
 
 Para instalar otro nuevo servidor vamos a crear otra carpeta dentro de nuestro directorio /var/www/ y su respectivo fichero .conf del VirtualHost.
