@@ -211,7 +211,8 @@ Tendremos que configurar al menos esos tres parametros.
 
 Una vez configurados, tendremos que configurar apache para que permita el acceso a las estadisticas de awstats. Para ello, accedemos al archivo .conf del VirtualHost. Quedará de la siguiente manera:
 
-![image](https://github.com/DaniMa02/SREI-2-ASIR/assets/47284389/fe1abd29-c6ed-4f40-a7e2-6ff8fe081d5f)
+![image](https://github.com/DaniMa02/SREI-2-ASIR/assets/47284389/b7352152-6f74-4b9f-8dba-d230392a2374)
+
 
 Lo siguiente será configurar Awstats para que procese registros y genere estadisticas.
 
@@ -228,3 +229,21 @@ NOTA: apache no reiniciaba porque había un fallo de sintaxis en el VirtualHost,
 
 Ahora funciona todo correctamente.
 ### Instala un segundo servidor de tu elección (nginx, lighttpd) bajo el dominio “servidor2.centro.intranet”. Debes configurarlo para que sirva en el puerto 8080 y haz los cambios necesarios para ejecutar php. Instala phpmyadmin.
+
+Para instalar otro nuevo servidor vamos a crear otra carpeta dentro de nuestro directorio /var/www/ y su respectivo fichero .conf del VirtualHost.
+
+![image](https://github.com/DaniMa02/SREI-2-ASIR/assets/47284389/f98f3534-b3ca-407c-a536-bcfb449aebcf)
+
+Voy a copiar el fichero de uno de mis VirtualHost para crear el de mi nuevo sitio.
+![image](https://github.com/DaniMa02/SREI-2-ASIR/assets/47284389/0d0a78c0-6279-4954-8b97-025c83b24717)
+Y lo configuraré de la siguiente manera:
+
+![image](https://github.com/DaniMa02/SREI-2-ASIR/assets/47284389/54503306-3cd4-4a0c-be2c-7435d204aafa)
+
+Una vez creados, vamos a añadir nuestro sitio al archivo de hosts para que sea accesible.
+
+![image](https://github.com/DaniMa02/SREI-2-ASIR/assets/47284389/029e9824-5007-4b9f-ab6f-52be24c5f959)
+
+Para comprobar que funciona voy a crear
+
+
