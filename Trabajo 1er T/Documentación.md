@@ -244,6 +244,7 @@ Una vez creados, vamos a añadir nuestro sitio al archivo de hosts para que sea 
 
 ![image](https://github.com/DaniMa02/SREI-2-ASIR/assets/47284389/029e9824-5007-4b9f-ab6f-52be24c5f959)
 
-Para comprobar que funciona voy a crear
+Para comprobar que funciona voy a crear un index.html en mi carpeta para comprobar que podemos acceder desde el puerto 8080.
+
 
 
