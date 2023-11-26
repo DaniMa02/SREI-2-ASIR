@@ -231,9 +231,11 @@ Por último accedemos a la página de las estadísticas:
 Como comprobamos aparecen las estadísticas.
 ### Instala un segundo servidor de tu elección (nginx, lighttpd) bajo el dominio “servidor2.centro.intranet”. Debes configurarlo para que sirva en el puerto 8080 y haz los cambios necesarios para ejecutar php. Instala phpmyadmin.
 
-Para instalar otro nuevo servidor vamos a crear otra carpeta dentro de nuestro directorio /var/www/ y su respectivo fichero .conf del VirtualHost.
+Para instalar otro nuevo servidor vamos a crear otra carpeta dentro de nuestro directorio /var/www/ con un index.html para comprobar más tarde que todo funciona sin problema y su respectivo fichero .conf del VirtualHost.
 
 ![image](https://github.com/DaniMa02/SREI-2-ASIR/assets/47284389/f98f3534-b3ca-407c-a536-bcfb449aebcf)
+![image](https://github.com/DaniMa02/SREI-2-ASIR/assets/47284389/b018a1de-658e-4f94-90c9-1d90318bd408)
+
 
 Voy a copiar el fichero de uno de mis VirtualHost para crear el de mi nuevo sitio.
 ![image](https://github.com/DaniMa02/SREI-2-ASIR/assets/47284389/0d0a78c0-6279-4954-8b97-025c83b24717)
