@@ -249,7 +249,37 @@ Una vez configurado, vamos a añadir nuestro sitio al archivo de hosts para que 
 
 ![image](https://github.com/DaniMa02/SREI-2-ASIR/assets/47284389/029e9824-5007-4b9f-ab6f-52be24c5f959)
 
-Para comprobar que funciona voy a crear un index.html en mi carpeta para comprobar que podemos acceder desde el puerto 8080.
+Ahora, hay que configurar nuestro archivo ports.conf para que apache sepa que debe escuchar también el puerto 8080, ya que si no lo añadimos, apache usará el puerto 80 para entrar a nuestra página y cuando queramos acceder desde el puerto 8080 nos devolverá un error.
+
+![image](https://github.com/DaniMa02/SREI-2-ASIR/assets/47284389/a5028d8e-529a-4310-9647-72177fcf07b9)
+
+Lo último que necesitamos hacer es habilitar nuestro sitio con a2ensite y reiniciar apache para que todas las configuraciones que hemos cambiado surtan efecto.
+
+![image](https://github.com/DaniMa02/SREI-2-ASIR/assets/47284389/783eacbb-3049-436e-94b3-e1b190c695dc)
+
+Ahora vamos a internet e intentamos entrar a nuestro sitio con el puerto 8080.
+
+![image](https://github.com/DaniMa02/SREI-2-ASIR/assets/47284389/96e29dfe-e99f-48d1-8676-7b6ff3f57fdd)
+
+Ahora que sabemos que nuestro host funciona, vamos a instalar lighttpd, PHP y phpmyadmin.
+
+Lo primero que tenemos que instalar es Lighttpd y php pero no sin antes eliminar el archivo index.html que hemos creado antes para probar que todo funciona debidamente.
+
+![image](https://github.com/DaniMa02/SREI-2-ASIR/assets/47284389/7b32f78c-e462-4c0c-839a-1080a831eb52)
+
+Para instalar lighttpd primero hacemos un apt update y apt upgrade en nuestro equipo y una vez terminado eso usaremos el comando apt install lighttpd php-cgi para instalar ambas cosas.
+
+![image](https://github.com/DaniMa02/SREI-2-ASIR/assets/47284389/cfc3352b-2a8c-4c7a-9716-1fd745e2603e)
+
+![image](https://github.com/DaniMa02/SREI-2-ASIR/assets/47284389/f8902a7b-e55d-4546-bcd6-a4e0256f94ef)
+
+Una vez instalado, vamos a configurar lighttpd para que utilice PHP, para ello vamos a ir al archivo de configuración principal de lighttpd y editarlo de la siguiente manera para que trabaje con PHP.
+
+![image](https://github.com/DaniMa02/SREI-2-ASIR/assets/47284389/7d48b6b0-ba5d-4361-a06a-434b2675ade8)
+
+Nota: solo he añadido las líneas que se encuentran dentro de los recuadros rojos, la demás configuración es la que trae por defecto.
+
+Ahora, vamos a configurar el archivo de nuestro servidor virtual específico. Para ello vamos a la carpeta de conf-available de lighttpd y creamos nuestro archivo de configuración según los requisitos de lighttpd, que nos exige que nuestro fichero empiece con un número de dos dígitos seguidos de un guión, el nombre de nuestro archivo y finalizando con .conf de la siguiente manera: número-nombre.conf.
 
 
 
