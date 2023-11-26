@@ -229,6 +229,8 @@ Por último accedemos a la página de las estadísticas:
 ![image](https://github.com/DaniMa02/SREI-2-ASIR/assets/47284389/0a94dc2d-ae2d-4471-a380-00f5a0acfaed)
 
 Como comprobamos aparecen las estadísticas.
+
+
 ### Instala un segundo servidor de tu elección (nginx, lighttpd) bajo el dominio “servidor2.centro.intranet”. Debes configurarlo para que sirva en el puerto 8080 y haz los cambios necesarios para ejecutar php. Instala phpmyadmin.
 
 Para instalar otro nuevo servidor vamos a crear otra carpeta dentro de nuestro directorio /var/www/, un index.html dentro del directorio para comprobar más tarde que todo funciona sin problema más tarde y su respectivo fichero .conf del VirtualHost.
@@ -273,5 +275,8 @@ Para instalar nxinx primero hacemos un apt update y apt upgrade en nuestro equip
 
 ![image](https://github.com/DaniMa02/SREI-2-ASIR/assets/47284389/f4074c7b-db62-4eba-b402-8e7c7ccfd944)
 
+Una vez instalado, vamos a comprobar que se encuentra activo. Si al usar el comando systemctl status nginx vemos que el servicio ha fallado en iniciarse, puede deberse a que apache está activo y hay un conflicto entre ellos. Para solucionarlo, vamos a apagar apache y a intentar iniciar nginx y comprobaremos si nginx ha podido activarse.
 
-Ahora vamos a aplicar algunos ajustes al firewall.
+![image](https://github.com/DaniMa02/SREI-2-ASIR/assets/47284389/39768889-88b3-43ec-b190-fde62e837a5f)
+
+
