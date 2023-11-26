@@ -281,5 +281,9 @@ Nota: solo he añadido las líneas que se encuentran dentro de los recuadros roj
 
 Ahora, vamos a configurar el archivo de nuestro servidor virtual específico. Para ello vamos a la carpeta de conf-available de lighttpd y creamos nuestro archivo de configuración según los requisitos de lighttpd, que nos exige que nuestro fichero empiece con un número de dos dígitos seguidos de un guión, el nombre de nuestro archivo y finalizando con .conf de la siguiente manera: número-nombre.conf.
 
+![image](https://github.com/DaniMa02/SREI-2-ASIR/assets/47284389/472d213b-4f3f-4b34-a3c8-8b4be8251d34)
+
+Una vez configurado, vamos a habilitar nuestro sitio con el comando lighty-enable-mod 21-servidor2.conf y a reiniciarlo con: systemctl restart lighttpd.
+
 
 
