@@ -243,9 +243,9 @@ Para crear el fichero voy a copiar el fichero default.
 
 Y lo configuraré de la siguiente manera:
 
-![image](https://github.com/DaniMa02/SREI-2-ASIR/assets/47284389/54503306-3cd4-4a0c-be2c-7435d204aafa)
+![image](https://github.com/DaniMa02/SREI-2-ASIR/assets/47284389/2f9a5030-3c13-4e2e-873f-1962b35ae805)
 
-Una vez creados, vamos a añadir nuestro sitio al archivo de hosts para que sea accesible.
+Una vez configurado, vamos a añadir nuestro sitio al archivo de hosts para que sea accesible.
 
 ![image](https://github.com/DaniMa02/SREI-2-ASIR/assets/47284389/029e9824-5007-4b9f-ab6f-52be24c5f959)
 
