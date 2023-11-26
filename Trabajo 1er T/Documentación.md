@@ -261,30 +261,17 @@ Ahora vamos a internet e intentamos entrar a nuestro sitio con el puerto 8080.
 
 ![image](https://github.com/DaniMa02/SREI-2-ASIR/assets/47284389/96e29dfe-e99f-48d1-8676-7b6ff3f57fdd)
 
-Ahora que sabemos que nuestro host funciona, vamos a instalar lighttpd, PHP y phpmyadmin.
+Ahora que sabemos que nuestro host funciona, vamos a instalar nginx, PHP y phpmyadmin.
 
-Lo primero que tenemos que instalar es Lighttpd pero no sin antes eliminar el archivo index.html que hemos creado antes para probar que todo funciona debidamente.
+Lo primero que tenemos que instalar es nxing pero no sin antes eliminar el archivo index.html que hemos creado antes para probar que todo funciona debidamente.
 
 ![image](https://github.com/DaniMa02/SREI-2-ASIR/assets/47284389/7b32f78c-e462-4c0c-839a-1080a831eb52)
 
-Para instalar lighttpd primero hacemos un apt update y apt upgrade en nuestro equipo y una vez terminado eso usaremos el comando apt install lighttpd para instalarlo.
+Para instalar nxinx primero hacemos un apt update y apt upgrade en nuestro equipo y una vez terminado eso usaremos el comando apt install nginx para instalarlo.
 
-![image](https://github.com/DaniMa02/SREI-2-ASIR/assets/47284389/cfc3352b-2a8c-4c7a-9716-1fd745e2603e)
+![image](https://github.com/DaniMa02/SREI-2-ASIR/assets/47284389/b70302ca-9c01-487e-8643-3da27805b34d)
 
-![image](https://github.com/DaniMa02/SREI-2-ASIR/assets/47284389/f8902a7b-e55d-4546-bcd6-a4e0256f94ef)
-
-Una vez instalado, vamos a configurar lighttpd para que utilice PHP, para ello vamos a ir al archivo de configuración principal de lighttpd y editarlo de la siguiente manera para que trabaje con PHP.
-
-![image](https://github.com/DaniMa02/SREI-2-ASIR/assets/47284389/7d48b6b0-ba5d-4361-a06a-434b2675ade8)
-
-Nota: solo he añadido las líneas que se encuentran dentro de los recuadros rojos, la demás configuración es la que trae por defecto.
-
-Ahora, vamos a configurar el archivo de nuestro servidor virtual específico. Para ello vamos a la carpeta de conf-available de lighttpd y creamos nuestro archivo de configuración según los requisitos de lighttpd, que nos exige que nuestro fichero empiece con un número de dos dígitos seguidos de un guión, el nombre de nuestro archivo y finalizando con .conf de la siguiente manera: número-nombre.conf.
-
-![image](https://github.com/DaniMa02/SREI-2-ASIR/assets/47284389/2c4e3c40-1a3e-48a7-90a4-baf0c37bbf1e)
+![image](https://github.com/DaniMa02/SREI-2-ASIR/assets/47284389/f4074c7b-db62-4eba-b402-8e7c7ccfd944)
 
 
-Una vez configurado, vamos a habilitar nuestro sitio con el comando lighty-enable-mod 21-servidor2.conf y a reiniciar lighttpd con: systemctl restart lighttpd.
-
-
-
+Ahora vamos a aplicar algunos ajustes al firewall.
