@@ -294,3 +294,11 @@ Una vez añadido esto, recargamos nginx.
 
 Y para comprobar que php funciona crearemos un info.php con el siguiente contenido:
 
+![image](https://github.com/DaniMa02/SREI-2-ASIR/assets/47284389/ceed3344-ee47-4fe3-a10b-ac26dd715121)
+
+Ahora entramos en la pagina para comprobar que sirva el contenido.
+
+![image](https://github.com/DaniMa02/SREI-2-ASIR/assets/47284389/63476655-d727-48a9-9184-9a7b3f820eb4)
+
+Una vez sirve el contenido, vamos a instalar phpmyadmin. Para ello usamos el comando install phpmyadmin, no sin antes usar apt update y apt upgrade.
+
