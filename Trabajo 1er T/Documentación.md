@@ -243,30 +243,30 @@ Una vez instalado, vamos a crear la carpeta de nuestro nuevo dominio en /var/www
 
 ![image](https://github.com/DaniMa02/SREI-2-ASIR/assets/47284389/28743323-d4f8-46ea-99b0-350c9cd22d6f)
 
-
-![image](https://github.com/DaniMa02/SREI-2-ASIR/assets/47284389/f98f3534-b3ca-407c-a536-bcfb449aebcf)
-![image](https://github.com/DaniMa02/SREI-2-ASIR/assets/47284389/b018a1de-658e-4f94-90c9-1d90318bd408)
-
-
-Una vez configurado, vamos a añadir nuestro sitio al archivo de hosts para que sea accesible.
+Una vez creado, vamos a añadir nuestro sitio al archivo de hosts para que sea accesible.
 
 ![image](https://github.com/DaniMa02/SREI-2-ASIR/assets/47284389/029e9824-5007-4b9f-ab6f-52be24c5f959)
 
+Ahora vamos a configurar nginx y el virtualhost del sitio dentro de la configuración de nginx puesto que al estar usando apache y nginx a la vez, nginx no iniciará al estar usando ambos el mismo puerto.
 
-Ahora que sabemos que nuestro host funciona, vamos a instalar nginx, PHP y phpmyadmin.
+Para cambiar el puerto que nginx utiliza por defecto, nos dirigimos a la carpeta sites-enabled de nginx y editamos su fichero default.conf, modificando el puerto que escucha por defecto del 80 al 81 o cualquier otro.
 
-Lo primero que tenemos que instalar es nxing pero no sin antes eliminar el archivo index.html que hemos creado antes para probar que todo funciona debidamente.
+![image](https://github.com/DaniMa02/SREI-2-ASIR/assets/47284389/3cf59d1a-af5d-41f3-82fa-054a1aedfb03)
 
-![image](https://github.com/DaniMa02/SREI-2-ASIR/assets/47284389/7b32f78c-e462-4c0c-839a-1080a831eb52)
+Una vez configurado eso, nginx podrá iniciarse pero aún tendremos que agregar el .conf para nuestro servidor2.centro.intranet, para lo que voy a copiar el archivo default a uno que se llame servidor2.conf.
+En este fichero, vamos a configurar varias cosas, lo primero será el puerto, puesto que debe servirlo desde el 8080 y lo segundo será la ruta y el server_name.
 
-Para instalar nxinx primero hacemos un apt update y apt upgrade en nuestro equipo y una vez terminado eso usaremos el comando apt install nginx para instalarlo.
+![image](https://github.com/DaniMa02/SREI-2-ASIR/assets/47284389/b0276cab-f781-4678-96e9-da1e1a716653)
+
+Para activar nuestro sitio puesto que hemos creado el fichero en sites-available, tendremos que crear un enlace simbólico en la carpeta sites-enabled con el siguiente comando.
+
+![image](https://github.com/DaniMa02/SREI-2-ASIR/assets/47284389/98753cbf-4d16-4430-abb7-7995416a7d01)
 
 
-Una vez instalado, vamos a comprobar que se encuentra activo. Si al usar el comando systemctl status nginx vemos que el servicio ha fallado en iniciarse, puede deberse a que apache está activo y hay un conflicto entre ellos. Para solucionarlo, vamos a apagar apache y a intentar iniciar nginx y comprobaremos si nginx ha podido activarse.
+Ahora que todo está configurado, vamos a iniciar nginx con el comando service nginx start y vamos a acceder a nuestra página desde el puerto 8080.
 
-![image](https://github.com/DaniMa02/SREI-2-ASIR/assets/47284389/39768889-88b3-43ec-b190-fde62e837a5f)
+![image](https://github.com/DaniMa02/SREI-2-ASIR/assets/47284389/3f2d1e5f-1e81-496a-8a55-684365095b49)
 
-Si queremos utilizar apache y nginx a la vez, tendremos que cambiar el puerto en el que está escuchando nginx para que no se produzca un conflicto entre ambos. Para ello editamos su archivo de configuración principal de la siguiente manera:
-![image](https://github.com/DaniMa02/SREI-2-ASIR/assets/47284389/275bc9dc-9c5e-42ba-931f-64d65f4049e2) 
+Gracias a la cabecera, podemos comprobar que la página la está sirviendo nginx.
 
-Por defecto su configuración escucha el puerto 80.
+Ahora vamos a instalar php
