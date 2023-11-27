@@ -233,35 +233,25 @@ Por último accedemos a la página de las estadísticas:
 
 ### Instala un segundo servidor de tu elección (nginx, lighttpd) bajo el dominio “servidor2.centro.intranet”. Debes configurarlo para que sirva en el puerto 8080 y haz los cambios necesarios para ejecutar php. Instala phpmyadmin.
 
-Para instalar otro nuevo servidor vamos a crear otra carpeta dentro de nuestro directorio /var/www/, un index.html dentro del directorio para comprobar más tarde que todo funciona sin problema más tarde y su respectivo fichero .conf del VirtualHost.
+Para instalar nginx primero vamos a hacer un apt update y apt upgrade de nuestro sistema. Una vez realizados vamos a instalar nginx con el comando apt install nginx.
+
+![image](https://github.com/DaniMa02/SREI-2-ASIR/assets/47284389/b70302ca-9c01-487e-8643-3da27805b34d)
+
+![image](https://github.com/DaniMa02/SREI-2-ASIR/assets/47284389/f4074c7b-db62-4eba-b402-8e7c7ccfd944)
+
+Una vez instalado, vamos a crear la carpeta de nuestro nuevo dominio en /var/www/ y dentro del mismo vamos a crear un index.html para comprobar más tarde que nuestro dominio sirve la página que le solicitemos.
+
+![image](https://github.com/DaniMa02/SREI-2-ASIR/assets/47284389/28743323-d4f8-46ea-99b0-350c9cd22d6f)
+
 
 ![image](https://github.com/DaniMa02/SREI-2-ASIR/assets/47284389/f98f3534-b3ca-407c-a536-bcfb449aebcf)
 ![image](https://github.com/DaniMa02/SREI-2-ASIR/assets/47284389/b018a1de-658e-4f94-90c9-1d90318bd408)
 
-Para crear el fichero voy a copiar el fichero default.
-
-![image](https://github.com/DaniMa02/SREI-2-ASIR/assets/47284389/6e5da40f-d756-45d0-be80-98a67d853124)
-
-
-Y lo configuraré de la siguiente manera:
-
-![image](https://github.com/DaniMa02/SREI-2-ASIR/assets/47284389/2f9a5030-3c13-4e2e-873f-1962b35ae805)
 
 Una vez configurado, vamos a añadir nuestro sitio al archivo de hosts para que sea accesible.
 
 ![image](https://github.com/DaniMa02/SREI-2-ASIR/assets/47284389/029e9824-5007-4b9f-ab6f-52be24c5f959)
 
-Ahora, hay que configurar nuestro archivo ports.conf para que apache sepa que debe escuchar también el puerto 8080, ya que si no lo añadimos, apache usará el puerto 80 para entrar a nuestra página y cuando queramos acceder desde el puerto 8080 nos devolverá un error.
-
-![image](https://github.com/DaniMa02/SREI-2-ASIR/assets/47284389/a5028d8e-529a-4310-9647-72177fcf07b9)
-
-Lo último que necesitamos hacer es habilitar nuestro sitio con a2ensite y reiniciar apache para que todas las configuraciones que hemos cambiado surtan efecto.
-
-![image](https://github.com/DaniMa02/SREI-2-ASIR/assets/47284389/783eacbb-3049-436e-94b3-e1b190c695dc)
-
-Ahora vamos a internet e intentamos entrar a nuestro sitio con el puerto 8080.
-
-![image](https://github.com/DaniMa02/SREI-2-ASIR/assets/47284389/96e29dfe-e99f-48d1-8676-7b6ff3f57fdd)
 
 Ahora que sabemos que nuestro host funciona, vamos a instalar nginx, PHP y phpmyadmin.
 
@@ -271,9 +261,6 @@ Lo primero que tenemos que instalar es nxing pero no sin antes eliminar el archi
 
 Para instalar nxinx primero hacemos un apt update y apt upgrade en nuestro equipo y una vez terminado eso usaremos el comando apt install nginx para instalarlo.
 
-![image](https://github.com/DaniMa02/SREI-2-ASIR/assets/47284389/b70302ca-9c01-487e-8643-3da27805b34d)
-
-![image](https://github.com/DaniMa02/SREI-2-ASIR/assets/47284389/f4074c7b-db62-4eba-b402-8e7c7ccfd944)
 
 Una vez instalado, vamos a comprobar que se encuentra activo. Si al usar el comando systemctl status nginx vemos que el servicio ha fallado en iniciarse, puede deberse a que apache está activo y hay un conflicto entre ellos. Para solucionarlo, vamos a apagar apache y a intentar iniciar nginx y comprobaremos si nginx ha podido activarse.
 
