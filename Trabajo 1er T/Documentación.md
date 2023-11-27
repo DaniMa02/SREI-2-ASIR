@@ -279,4 +279,7 @@ Una vez instalado, vamos a comprobar que se encuentra activo. Si al usar el coma
 
 ![image](https://github.com/DaniMa02/SREI-2-ASIR/assets/47284389/39768889-88b3-43ec-b190-fde62e837a5f)
 
+Si queremos utilizar apache y nginx a la vez, tendremos que cambiar el puerto en el que está escuchando nginx para que no se produzca un conflicto entre ambos. Para ello editamos su archivo de configuración principal de la siguiente manera:
+![image](https://github.com/DaniMa02/SREI-2-ASIR/assets/47284389/275bc9dc-9c5e-42ba-931f-64d65f4049e2) 
 
+Por defecto su configuración escucha el puerto 80.
