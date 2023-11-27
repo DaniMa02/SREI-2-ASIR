@@ -269,4 +269,28 @@ Ahora que todo está configurado, vamos a iniciar nginx con el comando service n
 
 Gracias a la cabecera, podemos comprobar que la página la está sirviendo nginx.
 
-Ahora vamos a instalar php
+Ahora vamos a instalar mysql, puesto que usaremos phpmyadmin que es un software creado para gestionar mysql en la web y si no lo instalamos no podremos comprobar que funcione. Para instalar mysql usamos apt install mysql-server.
+![image](https://github.com/DaniMa02/SREI-2-ASIR/assets/47284389/422831ba-856a-4b33-b1d8-69b1f7595057)
+
+En mi caso ya lo tengo instalado asique nos muestra un mensaje que dice que está en su versión más reciente.
+
+Ahora vamos a instalar PHP con el siguiente comando: apt install php-fpm php-mysql.
+
+![image](https://github.com/DaniMa02/SREI-2-ASIR/assets/47284389/5371d1f7-aed3-42bb-b562-4d58235bfb7d)
+
+Como comprobamos, ya están instalados y en su versión más reciente también.
+
+Lo siguiente que haremos será configurar Nginx para que utilice PHP, para ello, vamos a hacer que el directorio de nuestro dominio pertenezca a nuestro usuario con el siguiente comando: sudo chown -R $USER:$USER /var/www/your_domain.
+
+![image](https://github.com/DaniMa02/SREI-2-ASIR/assets/47284389/6b147ca6-45c3-4c91-aeef-2f72b1394936)
+
+Y una vez hecho esto, configuraremos el archivo de configuración que creamos antes para nuestro host de la siguiente manera:
+
+![image](https://github.com/DaniMa02/SREI-2-ASIR/assets/47284389/94e12134-02a8-46ec-8167-1ad2642af49b)
+
+Una vez añadido esto, recargamos nginx.
+
+![image](https://github.com/DaniMa02/SREI-2-ASIR/assets/47284389/80c88d71-c6b4-48c2-a1bb-96d1088f659b)
+
+Y para comprobar que php funciona crearemos un info.php con el siguiente contenido:
+
