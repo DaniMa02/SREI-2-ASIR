@@ -302,3 +302,22 @@ Ahora entramos en la pagina para comprobar que sirva el contenido.
 
 Una vez sirve el contenido, vamos a instalar phpmyadmin. Para ello usamos el comando install phpmyadmin, no sin antes usar apt update y apt upgrade.
 
+Una vez instalado va a salir una ventana en la que le daremos a okey sin seleccionar nada. Se me olvido hacer la captura de esa pantalla. Y en la siguiente le damos a que sí. Tampoco pude hacer la captura.
+Después como instalé el modulo de seguridad de mysql me sale esta ventana:
+
+![image](https://github.com/DaniMa02/SREI-2-ASIR/assets/47284389/cc915653-87fc-4a72-a46b-19b5b37ffdb9)
+
+Ahora desinstalaré el componente.
+![image](https://github.com/DaniMa02/SREI-2-ASIR/assets/47284389/4bc3c5cd-e6a1-4f5b-937a-1df48fd3fbfe)
+
+Y una vez desinstalado volveré a instalar phpmyadmin y me saldrá una ventana en la que le daremos a que sí y se instalará como normalmente.
+
+Una vez instalado vamos a crear un enlace simbolico de la carpeta de instlación de phpmyadmin a mi carpeta del dominio.
+
+![image](https://github.com/DaniMa02/SREI-2-ASIR/assets/47284389/56910726-e959-4dde-a2b1-83fb869a4ef5)
+
+Una vez creado el enlace simbólico, vamos a editar la configuración de mi virtualhost para que acepte como pagina por defecto index.php y cargue la página.
+
+![image](https://github.com/DaniMa02/SREI-2-ASIR/assets/47284389/67427649-42e9-402f-9bf8-44432cfa07d9)
+
+![image](https://github.com/DaniMa02/SREI-2-ASIR/assets/47284389/5eae3e12-748d-4d2e-a194-7e6f9555fa9a)
