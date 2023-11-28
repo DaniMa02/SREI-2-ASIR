@@ -318,9 +318,9 @@ Una vez instalado vamos a crear un enlace simbolico de la carpeta de instlación
 
 Una vez creado el enlace simbólico, vamos a editar la configuración de mi virtualhost para que acepte como pagina por defecto index.php y cargue la página. Reiniciamos nginx y entramos a la ruta de phpmyadmin, que nos redirigirá al inicio de sesión.
 
-![image](https://github.com/DaniMa02/SREI-2-ASIR/assets/47284389/d3df3a26-cd28-4d43-a746-bae487c00092)
-
-Insertamos las credenciales y entraremos a phpmyadmin.
 ![image](https://github.com/DaniMa02/SREI-2-ASIR/assets/47284389/67427649-42e9-402f-9bf8-44432cfa07d9)
+Insertamos las credenciales y entraremos a phpmyadmin.
 
+
+![image](https://github.com/DaniMa02/SREI-2-ASIR/assets/47284389/d3df3a26-cd28-4d43-a746-bae487c00092)
 ![image](https://github.com/DaniMa02/SREI-2-ASIR/assets/47284389/5eae3e12-748d-4d2e-a194-7e6f9555fa9a)
