@@ -1,5 +1,4 @@
-
-```bash
+``` bash
 #!/bin/bash 
 if [ $# -eq 0 ];
 then echo "La sintaxis del script es: bash script NUM_PUERTO" 
