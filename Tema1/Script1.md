@@ -7,6 +7,7 @@ if [ $# -eq 0 ];
 then echo "La sintaxis del script es: bash script NUM_PUERTO"
 
 else
+
 grep "Listen $1" /etc/apache2/ports.conf >/dev/null
 
 if [ $? -eq 0 ];
