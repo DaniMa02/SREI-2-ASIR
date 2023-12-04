@@ -15,4 +15,6 @@
 |[Script 3](Tema1/Script3.md)|Dummy Web Server |
 
 ## Proyecto 1er Trimestre
-[Proyecto](Trabajo%201er%20T/Documentación.md)
+|Tarea|Descripción|
+|-----|-----------|
+|[Proyecto](Trabajo%201er%20T/Documentación.md)|Proyecto primer trimestre SREI|
