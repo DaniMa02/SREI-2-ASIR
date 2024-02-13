@@ -17,4 +17,9 @@
 ## Proyecto 1er Trimestre
 |Tarea|Descripción|
 |-----|-----------|
-|[Proyecto](Trabajo%201er%20T/Documentación.md)|Proyecto primer trimestre SREI|
+|[Documentación 1erT](Trabajo%201er%20T/Documentación.md)|Proyecto primer trimestre SREI|
+
+## Proyecto 2º Trimestre
+|Tarea|Descripción|
+|-----|-----------|
+|[Documentación 2ºT](Trabajo%201er%20T/Documentación.md)|Proyecto segundo trimestre SREI|
