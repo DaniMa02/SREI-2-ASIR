@@ -22,4 +22,4 @@
 ## Proyecto 2º Trimestre
 |Tarea|Descripción|
 |-----|-----------|
-|[Documentación 2ºT](Trabajo%201er%20T/Documentación.md)|Proyecto segundo trimestre SREI|
+|[Documentación 2ºT](/Proyecto%202º%20Trimestre/documentacion.md)|Proyecto segundo trimestre SREI|
