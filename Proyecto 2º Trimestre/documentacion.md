@@ -42,6 +42,11 @@ Por último necesitaremos un cliente ftp para que el usuario pueda subir archivo
 
 Este cliente viene instalado por defecto en nuestra máquina.
 
+## Automatización de procesos
+
+Una vez instalados todos los módulos que necesitaremos, vamos a automatizar los procesos para que el usuario solo tenga que proporcionar alguna información y el servidor se encargue del resto del proceso.
+
+
 
 
 
