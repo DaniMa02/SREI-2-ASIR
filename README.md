@@ -17,7 +17,7 @@
 ## Proyecto 1er Trimestre
 |Tarea|Descripción|
 |-----|-----------|
-|[Documentación 1erT](Trabajo%201er%20T/Documentación.md)|Proyecto primer trimestre SREI|
+|[Documentación 1erT](Trabajo%201er%20T/Documentación.md)|Instalación del servidor web apache. Usaremos dos dominios mediante el archivo hosts: centro.intranet y departamentos.centro.intranet. El primero servirá el contenido mediante wordpress y el segundo una aplicación en python.|
 
 ## Proyecto 2º Trimestre
 |Tarea|Descripción|
