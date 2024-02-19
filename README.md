@@ -17,7 +17,7 @@
 ## Proyecto 1er Trimestre
 |Tarea|Descripción|
 |-----|-----------|
-|[Documentación 1erT](Trabajo%201er%20T/Documentación.md)|Instalación del servidor web apache. Usaremos dos dominios mediante el archivo hosts: centro.intranet y departamentos.centro.intranet. El primero servirá el contenido mediante wordpress y el segundo una aplicación en python.|
+|[Documentación 1erT](Trabajo%201er%20T/Documentación.md)|Proyecto de servidores Web. En este proyecto verás como se realiza la creación de dos dominios que servirán contenido mediante Wordpress y una aplicación de python, así como la instalación de los módulos necesarios para ambos funcionen correctamente. También se puede ver la implementación de protección de acceso a una página mediante autenticación.|
 
 ## Proyecto 2º Trimestre
 |Tarea|Descripción|
