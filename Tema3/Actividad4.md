@@ -27,9 +27,34 @@ Ahora, vamos a modificar la configuración para que los usuarios que accedan a n
 
 El motivo por el que uso DefaultRoot en vez de DefaultChdir es porque DefaultChdir solo establece la ruta en la que el usuario se encontrará cuando inicie sesión pero no le restringirá el acceso a carpetas superiores, como lo hace DefaultRoot. Utilizando DefaultRoot me aseguro de establecer el límite superior de acceso.
 
-Ahora actualizaremos el servicio y comprobaremos que el directorio por defecto es el establecido.
+Ahora actualizaremos el servicio y comprobaremos que el directorio por defecto es el establecido. Para ello vamos a crear un fichero en el directorio puesto que si utilizamos el compando "pwd" para comprobar el directorio en el que nos encontramos nos devolvera "/" puesto que es el directorio raiz establecido.
 
-4. No se permitirá subir ni eliminar nada de la carpeta ftp
-5. Configura el acceso mediante usuario anónimo
+![image](https://github.com/DaniMa02/SREI-2-ASIR/assets/47284389/d0befced-88ab-4334-9a3f-72ab6f1f03a5)
+
+Como podemos comprobar, el usuario se encuentra por defecto en la ruta /home/ftp y, adicionalmente, podemos comprobar que el usuario no puede cambiar de carpeta hacia arriba usando "cd ..".
+
+![image](https://github.com/DaniMa02/SREI-2-ASIR/assets/47284389/3523d05c-1390-4036-8562-4416ddffc598)
+
+Comprobamos así que el usuario permanece en el directorio raiz.
+
+2. No se permitirá subir ni eliminar nada de la carpeta ftp
+
+Para restringir dichas acciones en la carpeta ftp, vamos a modificar el archivo proftpd.conf, añadiendo la directiva "Directory" y configurandola de la siguiente manera:
+
+![image](https://github.com/DaniMa02/SREI-2-ASIR/assets/47284389/e1fc0c28-4221-4612-98c7-1527221af40e)
+
+Para comprobarlo, vamos a iniciar sesión con un usuario e intentaremos subir algún archivo o aliminar uno existente.
+
+![image](https://github.com/DaniMa02/SREI-2-ASIR/assets/47284389/60de564e-7b41-45d8-abc5-be577578f5ef)
+
+4. Configura el acceso mediante usuario anónimo
+
+Para configurar el acceso mediante usuario anónimo, primero tenemos que crear un usuario del sistema que será el usuario con el que los usuarios entraran al sistema de archivos. En mi caso he creado uno que se llama "anonimo" utilizando "useradd".
+Una vez creado, en el fichero de configuración, vamos a definir una directiva de la siguiente manera:
+
+![image](https://github.com/DaniMa02/SREI-2-ASIR/assets/47284389/c2f77922-ab26-463f-8d00-0cb426abf8bc)
+
+Ahora podremos iniciar sesión como usuario anónimo con cualquiera de los alias definidos.
+
 6. Permite que el usuario anónimo pueda escribir si accede desde la red 10.6.0.x
 
