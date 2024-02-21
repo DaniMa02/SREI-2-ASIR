@@ -47,14 +47,27 @@ Para comprobarlo, vamos a iniciar sesión con un usuario e intentaremos subir al
 
 ![image](https://github.com/DaniMa02/SREI-2-ASIR/assets/47284389/60de564e-7b41-45d8-abc5-be577578f5ef)
 
-4. Configura el acceso mediante usuario anónimo
+3. Configura el acceso mediante usuario anónimo
 
 Para configurar el acceso mediante usuario anónimo, primero tenemos que crear un usuario del sistema que será el usuario con el que los usuarios entraran al sistema de archivos. En mi caso he creado uno que se llama "anonimo" utilizando "useradd".
 Una vez creado, en el fichero de configuración, vamos a definir una directiva de la siguiente manera:
 
-![image](https://github.com/DaniMa02/SREI-2-ASIR/assets/47284389/c2f77922-ab26-463f-8d00-0cb426abf8bc)
+![image](https://github.com/DaniMa02/SREI-2-ASIR/assets/47284389/7f44a77c-3c6f-4df9-9b2c-4c8d74b57788)
 
 Ahora podremos iniciar sesión como usuario anónimo con cualquiera de los alias definidos.
 
-6. Permite que el usuario anónimo pueda escribir si accede desde la red 10.6.0.x
+![image](https://github.com/DaniMa02/SREI-2-ASIR/assets/47284389/e6b58a09-fba8-48b1-b3ff-bf8c9f0e21bc)
+
+
+4. Permite que el usuario anónimo pueda escribir si accede desde la red 10.6.0.x
+
+Para conseguir esto, vamos a la directiva "Anonymous" y dentro de "LimitWrite" escribimos lo siguiente:
+
+![image](https://github.com/DaniMa02/SREI-2-ASIR/assets/47284389/638289a9-84f2-4297-9d89-5b49e7006c59)
+
+
+En mi caso voy a utilizar la 10.4.0.x porque es la que puedo utilizar desde mi máquina.
+
+Con esto, todos los usuarios anonimos que accedan desde dicha red podrán hacer trabajos de escritura.
+
 
