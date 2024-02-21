@@ -63,10 +63,17 @@ Ahora podremos iniciar sesión como usuario anónimo con cualquiera de los alias
 
 Para conseguir esto, vamos a la directiva "Anonymous" y dentro de "LimitWrite" escribimos lo siguiente:
 
-![image](https://github.com/DaniMa02/SREI-2-ASIR/assets/47284389/a7b23263-c852-4ccb-9216-d46000fc7f97)
+![image](https://github.com/DaniMa02/SREI-2-ASIR/assets/47284389/b9045e9f-ba0f-4021-9183-63f2878898c7)
 
 En mi caso voy a utilizar la 10.4.0.x porque es la que puedo utilizar desde mi máquina.
 
 Con esto, todos los usuarios anonimos que accedan desde dicha red podrán hacer trabajos de escritura.
 
+![image](https://github.com/DaniMa02/SREI-2-ASIR/assets/47284389/82e4756c-e2fb-4a3a-bcb4-2419349181ae)
+
+![image](https://github.com/DaniMa02/SREI-2-ASIR/assets/47284389/fb747250-c13f-4403-9273-a9b0d41b1587)
+
+Como podemos comprobar podemos subir archivos, pero si ahora me cambio de red e intento subir un archivo, no me dejará.
+
+![image](https://github.com/DaniMa02/SREI-2-ASIR/assets/47284389/5e2ecd7a-cd2b-4f5f-a5ab-4ffd2b4a5615)
 
