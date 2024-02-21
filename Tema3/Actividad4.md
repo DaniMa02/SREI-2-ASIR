@@ -63,8 +63,7 @@ Ahora podremos iniciar sesión como usuario anónimo con cualquiera de los alias
 
 Para conseguir esto, vamos a la directiva "Anonymous" y dentro de "LimitWrite" escribimos lo siguiente:
 
-![image](https://github.com/DaniMa02/SREI-2-ASIR/assets/47284389/638289a9-84f2-4297-9d89-5b49e7006c59)
-
+![image](https://github.com/DaniMa02/SREI-2-ASIR/assets/47284389/a7b23263-c852-4ccb-9216-d46000fc7f97)
 
 En mi caso voy a utilizar la 10.4.0.x porque es la que puedo utilizar desde mi máquina.
 
