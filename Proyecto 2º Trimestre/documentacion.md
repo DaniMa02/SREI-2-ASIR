@@ -38,9 +38,7 @@ Como queremos que el usuario se conecte mediante SSH a nuestro servidor necesita
 
 Necesitaremos un cliente ftp para que el usuario pueda subir archivos.
 
-![image](https://github.com/DaniMa02/SREI-2-ASIR/assets/47284389/c7519e52-537b-4766-baaa-654be458dac4)
-
-Este cliente viene instalado por defecto en nuestra máquina.
+![image](https://github.com/DaniMa02/SREI-2-ASIR/assets/47284389/40ec93d9-f3b7-4781-b2d8-66107f17c08b)
 
 Necesitamos instalar openssl para la configuración de TLS.
 
