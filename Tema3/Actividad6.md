@@ -40,7 +40,6 @@ Con esto el acceso a través de TLS queda configurado. Tendremos que reiniciar e
 
 ## Configura filezilla para usar una conexión TLS y comprueba que funciona correctamente.
 
-![image](https://github.com/DaniMa02/SREI-2-ASIR/assets/47284389/a5ebb621-db44-4802-bac5-ddc278375416)
+![image](https://github.com/DaniMa02/SREI-2-ASIR/assets/47284389/0bf35fa0-563d-47d4-a453-9a786c4a5407)
 
-![image](https://github.com/DaniMa02/SREI-2-ASIR/assets/47284389/032b8bff-e863-44c2-b7f0-ff5881ac0849)
 
