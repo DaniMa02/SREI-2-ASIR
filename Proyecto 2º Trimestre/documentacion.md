@@ -36,11 +36,15 @@ Como queremos que el usuario se conecte mediante SSH a nuestro servidor necesita
 
 ![image](https://github.com/DaniMa02/SREI-2-ASIR/assets/47284389/99adf9d6-79fa-4517-a422-ee06d5236751)
 
-Por último necesitaremos un cliente ftp para que el usuario pueda subir archivos.
+Necesitaremos un cliente ftp para que el usuario pueda subir archivos.
 
 ![image](https://github.com/DaniMa02/SREI-2-ASIR/assets/47284389/c7519e52-537b-4766-baaa-654be458dac4)
 
 Este cliente viene instalado por defecto en nuestra máquina.
+
+Necesitamos instalar openssl para la configuración de TLS.
+
+![image](https://github.com/DaniMa02/SREI-2-ASIR/assets/47284389/940e929c-9d92-4283-9d86-43e0f3131174)
 
 ## Automatización de procesos
 
