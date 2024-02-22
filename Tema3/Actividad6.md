@@ -28,7 +28,15 @@ Ahora tenemos que modificar el fichero "tls.conf".
 
 ![image](https://github.com/DaniMa02/SREI-2-ASIR/assets/47284389/8f6b2a26-fea9-4c18-b3bf-e26b485b0af1)
 
-Con esto el acceso a través de TLS queda configurado. Tendremos que reiniciar el servicio.
+Una vez modificado el fichero tls.conf tendremos que descomentar algunas lineas de "modules.conf".
+
+![image](https://github.com/DaniMa02/SREI-2-ASIR/assets/47284389/6f660e14-9390-4c5b-9580-9a6c89c6eca5)
+
+Y por último instalar un paquete adiccional de proftpd para que este pueda arrancar con dichos módulos activos.
+
+![image](https://github.com/DaniMa02/SREI-2-ASIR/assets/47284389/c75b13a5-a3f3-482a-a9fe-5e49d40a2f37)
+
+Con esto quedaría configurado por completo.
 
 ## Crea un usuario del sistema
 
@@ -40,6 +48,8 @@ Con esto el acceso a través de TLS queda configurado. Tendremos que reiniciar e
 
 ## Configura filezilla para usar una conexión TLS y comprueba que funciona correctamente.
 
-![image](https://github.com/DaniMa02/SREI-2-ASIR/assets/47284389/0bf35fa0-563d-47d4-a453-9a786c4a5407)
+![image](https://github.com/DaniMa02/SREI-2-ASIR/assets/47284389/bad8c3ee-5873-4da2-a798-1457eead748f)
 
+![image](https://github.com/DaniMa02/SREI-2-ASIR/assets/47284389/eaf9bb1d-33b6-47cc-ae54-83aaa29e57e8)
 
+Como podemos comprobar podemos establecer conexión mediante TLS.
