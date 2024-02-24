@@ -44,6 +44,49 @@ Necesitamos instalar openssl para la configuración de TLS.
 
 ![image](https://github.com/DaniMa02/SREI-2-ASIR/assets/47284389/940e929c-9d92-4283-9d86-43e0f3131174)
 
+Una vez instalado proftpd y openssl vamos a configurarlo para que el usuario acceda al servidor ftp mediante TLS.
+
+Para ello, primero vamos a editar el archivo proftpd.conf:
+
+![image](https://github.com/DaniMa02/SREI-2-ASIR/assets/47284389/90ae6444-dd2b-42da-b43c-d02402a3f114)
+
+Una vez descomentada esta línea, vamos a editar el fichero modules.conf
+
+![image](https://github.com/DaniMa02/SREI-2-ASIR/assets/47284389/9276d425-4822-41c0-b3fd-65507a1634cb)
+
+Con esto activamos los modulos necesarios para el uso de TLS.
+
+Ahora necesitamos instalar un paquete para que dichos módulos funcionen correctamente.
+
+![image](https://github.com/DaniMa02/SREI-2-ASIR/assets/47284389/58899c2d-3b51-4c2c-b5f7-5055375e3cad)
+
+Y una vez instalado, modificamos el fichero tls.conf
+
+![image](https://github.com/DaniMa02/SREI-2-ASIR/assets/47284389/bae6d2c7-37b8-4ac8-9c30-ea873f07ff24)
+
+![image](https://github.com/DaniMa02/SREI-2-ASIR/assets/47284389/119af158-d802-462e-b0a9-8b03e282bf5a)
+
+Guardamos el archivo y reiniciamos el servicio de proftpd.
+
+Una vez reiniciado ahora tenemos que generar el certificado y la llave para TLS con openssl, para ello usamos el comando que viene en el archivo de configuración de tls.conf.
+
+![image](https://github.com/DaniMa02/SREI-2-ASIR/assets/47284389/f5fac688-4a95-4cb5-a5bf-48dc19a25f82)
+
+En mi caso voy a hacer algunas modificaciones para que sea más seguro.
+
+![image](https://github.com/DaniMa02/SREI-2-ASIR/assets/47284389/b07702fd-b202-4cf8-ae8d-5773090fb854)
+
+Una vez generado el certificado, podremos acceder al servidor ftp a traves de TLS.
+Para comprobarlo usamos filezilla:
+
+![image](https://github.com/DaniMa02/SREI-2-ASIR/assets/47284389/0598ef70-ff8e-447d-a894-f6f382df98ea)
+
+![image](https://github.com/DaniMa02/SREI-2-ASIR/assets/47284389/23f9877e-72b9-45d2-be4a-1fccdac93f6f)
+
+![image](https://github.com/DaniMa02/SREI-2-ASIR/assets/47284389/038f89c4-6b20-4e7a-a160-4d14673f9861)
+
+Como vemos funciona correctamente.
+
 ## Automatización de procesos
 
 Una vez instalados todos los módulos que necesitaremos, vamos a automatizar los procesos para que el usuario solo tenga que proporcionar alguna información y el servidor se encargue del resto del proceso.
