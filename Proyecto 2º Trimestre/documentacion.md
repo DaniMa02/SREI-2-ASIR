@@ -111,10 +111,31 @@ También vamos a instalar servicios de correo como postfix, imap y pop3, para el
 
 En mi caso se encuentran instalados ya dichos módulos.
 
+Ahora vamos a configurarlos, empezando por postfix:
+
+Lo primero será indicar que la configuración será solo local.
+
+![image](https://github.com/DaniMa02/SREI-2-ASIR/assets/47284389/62d81848-7703-4577-acb2-e266633435cc)
+
+En las siguientes ventanas nos pedirá un nombre y que añadamos otros destinos de los que aceptaremos correos si queremos.
+
+Más adelante, nos dirá en que redesdebería confiar el servicio, en nuestro caso, lo dejamos por defecto, lo cual indicará que confía solo en localhost.
+
+Indicamos el tipo de protocolo de internet que queremos usar.
+
+![image](https://github.com/DaniMa02/SREI-2-ASIR/assets/47284389/b678d4e9-3632-45fd-a39a-51f0c907e064)
+
+Y con esto quedará instalado postfix, ahora tenemos que modificar el archivo de configuración de dovecot para que permita los protocolos imap y pop3, para ello modificamos la siguiente línea:
+
+![image](https://github.com/DaniMa02/SREI-2-ASIR/assets/47284389/369d6416-bf5c-4ef0-b33a-026be804093b)
+
+De esta manera, también quedarían instalados los servidores de correo.
+
 Con los servicios de correo instalados solo restaria instalar php para que se puedan alojar páginas con php.
 
 ![image](https://github.com/DaniMa02/SREI-2-ASIR/assets/47284389/a0bf3b9d-1918-4d99-b11d-84a6ad0c2156)
 
+Php no requiere ningún tipo de configuración adicional para funcionar con apache más allá de la instalación del paquete de php para apache.
 
 ## Automatización de procesos
 
