@@ -111,7 +111,146 @@ Una vez instalados todos los módulos que necesitaremos, vamos a automatizar los
 El script para automatizar todos los procesos es el siguiente:
 
 
+``` bash
+#!/bin/bash
 
+# Creación del usuario
+
+userCreation() {
+#Variables necesarias:
+
+	local USER=$1
+	local PASSWORD=$2
+
+
+#Crear usuario y su directorio home.
+
+sudo useradd -m -d /home/$USER -s /bin/bash $USER
+
+# Configuración de la contraseña del usuario
+
+echo "$USER:$PASSWORD" | sudo chpasswd
+echo "Has creado el usuario del sistema ${USER} y actualizado su contraseña."
+}
+
+domainCreation() {
+	local USER=$1
+	local IP=$2
+	local DOMAIN="${USER}.marisma.local"
+	local FORWARD_ZONE="/etc/bind/zones/db.marisma.local"
+	local REVERSE_ZONE="/etc/bind/zones/db.192.168.195"
+# Configuración subdominio
+
+#Zona directa
+
+echo "\$ORIGIN ${DOMAIN}." >> $FORWARD_ZONE
+echo "@	IN	A	${IP}" >> $FORWARD_ZONE
+echo "www	IN	A	${IP}" >> $FORWARD_ZONE
+
+#Zona inversa
+echo "${IP}		IN	PTR	${DOMAIN}." >> $REVERSE_ZONE
+
+service apache2 reload > /dev/null
+service bind9 reload > /dev/null
+service proftpd reload > /dev/null
+echo "Subdominio ${DOMAIN} creado correctamente."
+}
+
+# Configuración del host virtual en Apache
+
+virtualHostCreation() {
+# Variables locales
+	local USER=$1
+	local IP=$2
+	local CONFIGFILE_DOMAIN="${USER}.marisma.local"
+	local AVAILABLE_PATH="/etc/apache2/sites-available/${CONFIGFILE_DOMAIN}.conf"
+	local DOCUMENT_ROOT="/var/www/html/${USER}"
+	local PYTHON_DIRECTORY="${DOCUMENT_ROOT}/python-web"
+	local PYTHON_APP="${PYTHON_DIRECTORY}/mypythonapp"
+	local PYTHON_PUBLIC="${PYTHON_DIRECTORY}/public_html"
+	local PY_CONTROLLER="${PYTHON_APP}/controller.py"
+
+
+# Agregar el host a el archivo /etc/hosts
+
+echo "${IP} ${CONFIGFILE_DOMAIN}" >> /etc/hosts
+echo "127.0.0.1 ${CONFIGFILE_DOMAIN}" >> /etc/hosts
+echo "El host se ha añadido al archivo de hosts."
+
+# Creación estructura directorios
+
+mkdir $DOCUMENT_ROOT
+mkdir $PYTHON_DIRECTORY
+mkdir $PYTHON_APP
+mkdir $PYTHON_PUBLIC
+
+# Creación del fichero python básico
+
+touch $PY_CONTROLLER
+
+echo "# -*- coding: utf-8 -*-
+
+def application(environ, start_response):
+        status = '200 ok'
+        html = 'Esta es la página principal de la web del usuario ${USER} generada con python.'
+        html = bytes(html,encoding= 'utf-8')
+        response_header =  [('Content-type', 'text/html')]
+        start_response(status, response_header)
+        yield html" > ${PY_CONTROLLER}
+
+
+# Crear el archivo de configuración del host virtual
+echo "<VirtualHost *:80>
+	ServerAdmin admin@$CONFIGFILE_DOMAIN
+	ServerName $CONFIGFILE_DOMAIN
+	WSGIScriptAlias / $PY_CONTROLLER
+	DocumentRoot $PYTHON_PUBLIC
+	<Directory />
+		Options FollowSymLinks
+		AllowOverride all
+	</Directory>
+	ErrorLog /var/log/apache2/$CONFIGFILE_DOMAIN.errorLog.log
+	CustomLog /var/log/apache2/$CONFIGFILE_DOMAIN.customLog.log combined
+</VirtualHost>" | sudo tee $AVAILABLE_PATH > /dev/null
+
+# Verificar la configuración de Apache
+apache2ctl configtest
+
+# Habilitar el sitio y reiniciar Apache si la verificación es exitosa
+if [ $? -eq 0 ]; then
+    a2ensite $CONFIGFILE_DOMAIN > /dev/null
+    systemctl restart apache2
+    echo "Se ha creado y habilitado el host ${CONFIGFILE_DOMAIN}."
+else
+    echo "Hay errores en la configuración de apache. No se ha habilitado el host."
+fi
+}
+
+dbCreation() {
+
+	local USER=$1
+	local PASSWORD=$2
+# Configuración base de datos
+mysql -u root -e "CREATE DATABASE ${USER};"
+mysql -u root -e "CREATE USER '${USER}'@'localhost' IDENTIFIED BY  '${PASSWORD}';"
+mysql -u root -e "GRANT ALL PRIVILEGES ON ${USER}.* TO '${USER}'@'localhost';"
+mysql -u root -e "FLUSH PRIVILEGES;"
+
+echo "Has creado la base de datos ${USER} y el usuario SQL ${USER} "
+}
+
+
+
+if [ $# -eq 3 ]; then
+	userCreation "$1" "$2"
+	domainCreation "$1" "$3"
+	virtualHostCreation "$1" "$3"
+	dbCreation "$1" "$2"
+    else
+    echo "Error: Debes proporcionar 3 argumentos en este orden: nombre, contraseña e IP."
+    exit 1
+fi
+```
 
 
 
