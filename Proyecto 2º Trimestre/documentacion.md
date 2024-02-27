@@ -28,17 +28,21 @@ También vamos a necesitar phpmyadmin para gestionar nuestra base de datos de ma
 
 Este módulo ya está instalado también.
 
-Será necesario instalar Python, que al igual que el resto de módulos se encuentra instalado.
+Será necesario instalar Python, que al igual que el resto de módulos se encuentra instalado, adicionalmente, necesitamos instalar el módulo de python para apache.
 
 ![image](https://github.com/DaniMa02/SREI-2-ASIR/assets/47284389/7c19c77c-e9fb-4a25-8bc5-e43f997dd5c5)
+
+![image](https://github.com/DaniMa02/SREI-2-ASIR/assets/47284389/6ddb3f38-0b80-43f6-9ffd-83447aa902b9)
 
 Como queremos que el usuario se conecte mediante SSH a nuestro servidor necesitaremos también ssh-cliente y ssh-server.
 
 ![image](https://github.com/DaniMa02/SREI-2-ASIR/assets/47284389/99adf9d6-79fa-4517-a422-ee06d5236751)
 
-Necesitaremos un cliente ftp para que el usuario pueda subir archivos.
+Necesitaremos un cliente ftp para que el usuario pueda subir archivos, asique vamos a instalar proftpd para configurar conexiones seguras y filezilla para que el cliente acceda.
 
 ![image](https://github.com/DaniMa02/SREI-2-ASIR/assets/47284389/40ec93d9-f3b7-4781-b2d8-66107f17c08b)
+
+![image](https://github.com/DaniMa02/SREI-2-ASIR/assets/47284389/67ca2688-acfb-44f5-ac64-6c679e435061)
 
 Necesitamos instalar openssl para la configuración de TLS.
 
@@ -46,7 +50,9 @@ Necesitamos instalar openssl para la configuración de TLS.
 
 Una vez instalado proftpd y openssl vamos a configurarlo para que el usuario acceda al servidor ftp mediante TLS.
 
-Para ello, primero vamos a editar el archivo proftpd.conf:
+Primero vamos a modificar el archivo de configuración general para indicar el nombre con el que los usuarios accederan y otras configuraciones necesarias.
+
+![image](https://github.com/DaniMa02/SREI-2-ASIR/assets/47284389/2ecef695-87b9-4e4e-ac03-cf58d6e49ccc)
 
 ![image](https://github.com/DaniMa02/SREI-2-ASIR/assets/47284389/90ae6444-dd2b-42da-b43c-d02402a3f114)
 
@@ -87,9 +93,25 @@ Para comprobarlo usamos filezilla:
 
 Como vemos funciona correctamente.
 
+También vamos a instalar servicios de correo como postfix, imap y pop3, para ello ejecutamos la siguiente orden:
+
+![image](https://github.com/DaniMa02/SREI-2-ASIR/assets/47284389/3924d0fb-009f-47a5-a378-ddbbac22251f)
+
+En mi caso se encuentran instalados ya dichos módulos.
+
+Con los servicios de correo instalados solo restaria instalar php para que se puedan alojar páginas con php.
+
+![image](https://github.com/DaniMa02/SREI-2-ASIR/assets/47284389/a0bf3b9d-1918-4d99-b11d-84a6ad0c2156)
+
+
 ## Automatización de procesos
 
-Una vez instalados todos los módulos que necesitaremos, vamos a automatizar los procesos para que el usuario solo tenga que proporcionar alguna información y el servidor se encargue del resto del proceso.
+Una vez instalados todos los módulos que necesitaremos, vamos a automatizar los procesos a través de un script de linux para que el usuario solo tenga que proporcionar alguna información y el servidor se encargue del resto del proceso.
+
+El script para automatizar todos los procesos es el siguiente:
+
+
+
 
 
 
