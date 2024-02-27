@@ -50,6 +50,8 @@ Como queremos que el usuario se conecte mediante SSH a nuestro servidor necesita
 
 ![image](https://github.com/DaniMa02/SREI-2-ASIR/assets/47284389/99adf9d6-79fa-4517-a422-ee06d5236751)
 
+Al instalar SSH, también podremos usar SFTP puesto que este es un protocolo de transferencia de archivos del mismo.
+
 Necesitaremos un cliente ftp para que el usuario pueda subir archivos, asique vamos a instalar proftpd para configurar conexiones seguras y filezilla para que el cliente acceda.
 
 ![image](https://github.com/DaniMa02/SREI-2-ASIR/assets/47284389/40ec93d9-f3b7-4781-b2d8-66107f17c08b)
