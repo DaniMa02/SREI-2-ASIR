@@ -139,9 +139,11 @@ Con los servicios de correo instalados solo restaria instalar php para que se pu
 
 Php no requiere ningún tipo de configuración adicional para funcionar con apache más allá de la instalación del paquete de php para apache.
 
+Con esto, todos los módulos necesarios quedarían instalados y configurados de manera correcta.
+
 ## Automatización de procesos
 
-Una vez instalados todos los módulos que necesitaremos, vamos a automatizar los procesos a través de un script de linux para que el usuario solo tenga que proporcionar alguna información y el servidor se encargue del resto del proceso.
+Ahora vamos a automatizar los procesos a través de un script de linux para que el usuario solo tenga que proporcionar alguna información y el servidor se encargue del resto del proceso.
 
 El script para automatizar todos los procesos es el siguiente:
 
@@ -168,12 +170,17 @@ echo "$USER:$PASSWORD" | sudo chpasswd
 echo "Has creado el usuario del sistema ${USER} y actualizado su contraseña."
 }
 
+# Creación del dominio
+
 domainCreation() {
+
+# Variables locales
 	local USER=$1
 	local IP=$2
 	local DOMAIN="${USER}.marisma.local"
 	local FORWARD_ZONE="/etc/bind/zones/db.marisma.local"
 	local REVERSE_ZONE="/etc/bind/zones/db.192.168.195"
+
 # Configuración subdominio
 
 #Zona directa
@@ -183,7 +190,10 @@ echo "@	IN	A	${IP}" >> $FORWARD_ZONE
 echo "www	IN	A	${IP}" >> $FORWARD_ZONE
 
 #Zona inversa
+
 echo "${IP}		IN	PTR	${DOMAIN}." >> $REVERSE_ZONE
+
+#Reiniciamos los módulos.
 
 service apache2 reload > /dev/null
 service bind9 reload > /dev/null
@@ -194,7 +204,9 @@ echo "Subdominio ${DOMAIN} creado correctamente."
 # Configuración del host virtual en Apache
 
 virtualHostCreation() {
+
 # Variables locales
+
 	local USER=$1
 	local IP=$2
 	local CONFIGFILE_DOMAIN="${USER}.marisma.local"
@@ -235,6 +247,7 @@ def application(environ, start_response):
 
 
 # Crear el archivo de configuración del host virtual
+
 echo "<VirtualHost *:80>
 	ServerAdmin admin@$CONFIGFILE_DOMAIN
 	ServerName $CONFIGFILE_DOMAIN
@@ -249,6 +262,7 @@ echo "<VirtualHost *:80>
 </VirtualHost>" | sudo tee $AVAILABLE_PATH > /dev/null
 
 # Verificar la configuración de Apache
+
 apache2ctl configtest
 
 # Habilitar el sitio y reiniciar Apache si la verificación es exitosa
@@ -261,11 +275,15 @@ else
 fi
 }
 
-dbCreation() {
+# Creación de la base de datos y el usuario de sql
 
+dbCreation() {
+# Variables locales
 	local USER=$1
 	local PASSWORD=$2
+
 # Configuración base de datos
+
 mysql -u root -e "CREATE DATABASE ${USER};"
 mysql -u root -e "CREATE USER '${USER}'@'localhost' IDENTIFIED BY  '${PASSWORD}';"
 mysql -u root -e "GRANT ALL PRIVILEGES ON ${USER}.* TO '${USER}'@'localhost';"
@@ -275,6 +293,7 @@ echo "Has creado la base de datos ${USER} y el usuario SQL ${USER} "
 }
 
 
+# Comprobamos que el número de parámetros es el correcto antes de ejecutar nuestro script.
 
 if [ $# -eq 3 ]; then
 	userCreation "$1" "$2"
