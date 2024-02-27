@@ -16,6 +16,18 @@ Ahora vamos a instalar bind9 para poder gestionar nuestras zonas DNS y subzonas,
 
 En este caso ya se encuentra en la versión más reciente.
 
+Tenemos que configurar previamente las zonas y el dominio, para ello, vamos a editar el fichero "named.conf.local" de la siguiente manera:
+
+![image](https://github.com/DaniMa02/SREI-2-ASIR/assets/47284389/6171023f-b51b-45ee-80c8-3913321fc4cf)
+
+Ahora vamos a configurar la zona directa en el fichero especificado:
+
+![image](https://github.com/DaniMa02/SREI-2-ASIR/assets/47284389/1a2b8a9b-5592-4633-98e6-f1afddf1a0cd)
+
+Y por último la zona inversa:
+
+![image](https://github.com/DaniMa02/SREI-2-ASIR/assets/47284389/1c235dc9-1d54-44d5-a317-1222aa912fcb)
+
 Lo siguiente que necesitaremos es MySQL para crear la base de datos de la página web de nuestro cliente.
 
 ![image](https://github.com/DaniMa02/SREI-2-ASIR/assets/47284389/55526a90-14a4-4af6-af1c-266b1711c579)
