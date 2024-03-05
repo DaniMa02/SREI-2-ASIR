@@ -42,5 +42,6 @@
 ## Proyecto 2º Trimestre
 |Tarea|Descripción|
 |-----|-----------|
-|[Documentación 2ºT](/Proyecto%202º%20Trimestre/documentacion.md)|Proyecto segundo trimestre SREI|
-|[Documentación 2ºT](/Proyecto%202º%20Trimestre/documentacion.md)|Docker proyecto segundo trimestre SREI|
+|[Documentación 2ºT 1ª parte](/Proyecto%202º%20Trimestre/documentacion.md)|Proyecto segundo trimestre SREI|
+|[Documentación 2ºT comprobación script](/Proyecto%202º%20Trimestre/comprobacion.md)|Proyecto segundo trimestre SREI comprobación script|
+|[Documentación 2ºT](/Proyecto%202º%20Trimestre/primeraparteextra.md)|Docker proyecto segundo trimestre SREI|
